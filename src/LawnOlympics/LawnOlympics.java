@@ -6,38 +6,56 @@ package LawnOlympics;
 class LawnOlympics {
 
     public static void main(String[] args) {
-        // printing a blank line here between the C:\Program and the Title of the Program
+                // printing a blank line here between the C:\Program and the Title of the Program
         System.out.println(" ");
-        System.out.println("Lawn Olympics Games");           // prints the title of my program
-        System.out.println(" ");                            // I wanted another blank line here
-        System.out.println("For help, type h and enter.");  // prints a little help for the user
-        System.out.println(" ");                            // Just another blank line
-        if (args[0].equals("e"))
-            eventList();                                    //calls the eventlist method if e is entered
+                // prints the title of my program
+        System.out.println("Lawn Olympics Games");
+                // I wanted another blank line here
+        System.out.println(" ");
+                // prints a little help for the user
+        System.out.println("For help, type h and enter.");
+                // Just another blank line
+        System.out.println(" ");
+
+        if (args.length < 1)
+                System.out.println("You must enter something. Please try again or go to help.");
+        else if (args[0].equals("e"))
+                //calls the eventlist method if e is entered
+            eventList();
         else if (args[0].equals("o"))
-            olympianList();                             //calls the olympianList method if o is entered
+                // calls the olympianList method if o is entered
+            olympianList();
         else if (args[0].equals("h"))
-            helpList();                                     //calls the helpList method if h is entered
+                //calls the helpList method if h is entered
+            helpList();
         else
-            System.out.println("Please enter e, o, or h and enter"); // prints error message if not e, o or h
+                // prints error message if not e, o or h
+            System.out.println("Please enter e, o, or h and enter");
     }
 
-
-
-        public static void helpList() {                     // helpList method defined
-            String[] helpArray =                     // initializes and populates an array of help messages
+                // helpList method defined
+        public static void helpList() {
+                // initializes and populates an array of help messages
+            String[] helpArray =
                     {"for a list of events, type e", "for a list of olympians type o"};
             for (int i = 0; i < helpArray.length; i++)
-                System.out.println(helpArray[i]);           // prints the array of help messages
+                // prints the array of help messages
+                System.out.println(helpArray[i]);
         }
-        public static void eventList() {                    // eventList method defined
-            // initializes and populates an array of events
+
+                // eventList method defined
+        public static void eventList() {
+                // initializes and populates an array of events
             String[] eventArray = {"Washoos ", "CanJam ", "Horseshoes ", "Cornhole ", "Ladderball ", "Stickgame "};
             for (int i = 0; i < eventArray.length; i++)
-                System.out.println(eventArray[i]);       //prints the array of events
+                // prints the array of events
+                System.out.println(eventArray[i]);
         }
-    public static void olympianList() {             // olympianList method defined
-        String[][] olympianArray = {        // initializes and populates a 2 dimensional array
+
+                // olympianList method defined
+        public static void olympianList() {
+                // initializes and populates a 2 dimensional array
+        String[][] olympianArray = {
                 {"John Doe, ", "M, ", "45"},
                 {"Terri Doe, ", "F, ", "43"},
                 {"Harry Smith, ", "M, ", "23"},
@@ -55,7 +73,9 @@ class LawnOlympics {
                 {"Margaret Wheeler, ", "F, ", "25"},
                 {"Ardie Wheeler, ", "M, ", "30"}
         };
-        for(int i = 0; i < olympianArray.length; i++) {     // prints the 2D array
+
+                // prints the 2D array
+        for(int i = 0; i < olympianArray.length; i++) {
             for (int j = 0; j < olympianArray[i].length; j++) {
                 System.out.print(olympianArray[i][j]);
             }
